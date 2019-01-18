@@ -34,96 +34,96 @@ The purpose of this assignment with respect to the later class project is for us
 4. Click on 'Go to your AWS Educate Starter Account'
 5. Click on 'AWS Console'
 6. Create an EC2 instance based on Ubuntu 18.04 LTS image.
-  As a part of that process you will create and save a new private key, a `.pem` file, to log into your instance.
-  __Make sure that you save this file NOT in your public code repository. It will be stolen and used by cryptocurrency miners.__
+	As a part of that process you will create and save a new private key, a `.pem` file, to log into your instance.
+	__Make sure that you save this file NOT in your public code repository. It will be stolen and used by cryptocurrency miners.__
 
-  You should now be able to see the details of your instance including its public DNS, IP address, and security groups.
+	You should now be able to see the details of your instance including its public DNS, IP address, and security groups.
 
-  ![image](images/instance_details.png)
+	![image](images/instance_details.png)
 
 7. Set up the security group for your instance that has the following inbound and outbound firewall rules.
 
-  ![image](images/inbound.png)
-  ![image](images/outbound.png)
+	![image](images/inbound.png)
+	![image](images/outbound.png)
 
 8. Log in to your instance with
 
-  `ssh -i ~/google_drive/Teaching/CSCI 566/CSCI_566.pem ubuntu@ec2-52-87-214-148.compute-1.amazonaws.com`
+	`ssh -i ~/google_drive/Teaching/CSCI 566/CSCI_566.pem ubuntu@ec2-52-87-214-148.compute-1.amazonaws.com`
 
-  You will need to replace the location of your private key and use the address of your instance.
+	You will need to replace the location of your private key and use the address of your instance.
 
 
 ### Setting up measurement tools
 
 1. To measure latency you will use the `ping` command.
-  Look up the IP address of your EC2 instance in your AWS console and issue the following command from your computer (not the instance).
+	Look up the IP address of your EC2 instance in your AWS console and issue the following command from your computer (not the instance).
 
-  ![image](images/ping.png)
+	![image](images/ping.png)
 
-  Again, make sure you are pinging your own instance by setting the correct IP.
+	Again, make sure you are pinging your own instance by setting the correct IP.
 
 2. To measure bandwidth you will use the `iperf3` command.
-  To install `iperf3` run the following commands on your instance and on your own computer:
+	To install `iperf3` run the following commands on your instance and on your own computer:
 
-  `sudo apt update`
+	`sudo apt update`
 
-  `sudo apt install iperf3`
+	`sudo apt install iperf3`
 
-  To run `iperf3` execute
+	To run `iperf3` execute
 
-  `iperf3 -s`
+	`iperf3 -s`
 
-  on your instance and
+	on your instance and
 
-  ![image](images/iperf.png)
+	![image](images/iperf.png)
 
-  on your computer.
+	on your computer.
 
 3. From the output of these tools we can understand the network performance between your computer and your EC2 instance.
-  Specifically, `ping` tells us that the mean latency was 117ms and packet loss 0%.
-  `iperf3` gives us mean bandwidth of close to 100Mbps in both directions.
+	Specifically, `ping` tells us that the mean latency was 117ms and packet loss 0%.
+	`iperf3` gives us mean bandwidth of close to 100Mbps in both directions.
 
-  `iperf3` can measure bandwidth in a variety of ways, including using UDP, rather than TCP packets.
-  Here is a [link](https://aws.amazon.com/premiumsupport/knowledge-center/network-throughput-benchmark-linux-ec2/) to a quick tutorial, but consider also checking out the `man iperf3` page.
+	`iperf3` can measure bandwidth in a variety of ways, including using UDP, rather than TCP packets.
+	Here is a [link](https://aws.amazon.com/premiumsupport/knowledge-center/network-throughput-benchmark-linux-ec2/) to a quick tutorial, but consider also checking out the `man iperf3` page.
 
 
 
 ### Setting up traffic control (`tc`)
 
 1. To control the latency and bandwidth of your connection to your EC2 instance we will use the `tc` (traffic control) package.
-  To install `tc` run the following command on your computer:
+	To install `tc` run the following command on your computer:
 
-  `sudo apt install iproute2`
+	`sudo apt install iproute2`
 
 2. You may now:
 
-  - increase base latency to 200ms on the `eth0` interface
+	- increase base latency to 200ms on the `eth0` interface
 
-    `sudo tc qdisc add dev eth0 root netem delay 200ms`
+		`sudo tc qdisc add dev eth0 root netem delay 200ms`
 
-  - see the current rule
+	- see the current rule
 
-    `sudo tc qdisc show dev eth0`
+		`sudo tc qdisc show dev eth0`
 
-  - delete the current rule
+	- delete the current rule
 
-    `sudo tc qdisc del dev eth0 root`
+		`sudo tc qdisc del dev eth0 root`
 
-  - introduce packet loss
+	- introduce packet loss
 
-    `sudo tc qdisc add dev eth0 root netem loss 10%`
+		`sudo tc qdisc add dev eth0 root netem loss 10%`
 
-  - introduce packet corruption
+	- introduce packet corruption
 
-    `sudo tc qdisc add dev eth0 root netem corrupt 5%`
+		`sudo tc qdisc add dev eth0 root netem corrupt 5%`
 
-  - or limit bandwidth
+	- or limit bandwidth
 
-    `sudo tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit limit 10000`
+		`sudo tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit limit 10000`
 
-  For example the result of the last rule on `iperf3` is
+	For example the result of the last rule on `iperf3` is
 
-  ![image](images/tc.png)
+	![image](images/tc.png)
 
 There is much more to `tc` and you should become familiar with its [documentation](https://www.lartc.org/lartc.html#LARTC.QDISC) and how people are using it base on online forum discussions
 
