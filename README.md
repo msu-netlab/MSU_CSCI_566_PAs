@@ -34,10 +34,10 @@ The purpose of this assignment with respect to the later class project is for us
 4. Click on 'Go to your AWS Educate Starter Account'
 5. Click on 'AWS Console'
 6. Create an EC2 instance based on Ubuntu 18.04 LTS image.
-As a part of that process you will create and save a new private key, a `.pem` file, to log into your instance. __Make sure that you save this file NOT in your public code repository. It will be stolen and used by cryptocurrency miners.__
+  As a part of that process you will create and save a new private key, a `.pem` file, to log into your instance.
+  __Make sure that you save this file NOT in your public code repository. It will be stolen and used by cryptocurrency miners.__
 
   You should now be able to see the details of your instance including its public DNS, IP address, and security groups.
-
 
   ![image](images/instance_details.png)
 
@@ -55,7 +55,8 @@ As a part of that process you will create and save a new private key, a `.pem` f
 
 ### Setting up measurement tools
 
-1. To measure latency you will use the `ping` command. Look up the IP address of your EC2 instance in your AWS console and issue the following command from your computer (not the instance).
+1. To measure latency you will use the `ping` command.
+  Look up the IP address of your EC2 instance in your AWS console and issue the following command from your computer (not the instance).
 
   ![image](images/ping.png)
 
@@ -79,8 +80,8 @@ As a part of that process you will create and save a new private key, a `.pem` f
   on your computer.
 
 3. From the output of these tools we can understand the network performance between your computer and your EC2 instance.
-Specifically, `ping` tells us that the mean latency was 117ms and packet loss 0%.
-`iperf3` gives us mean bandwidth of close to 100Mbps in both directions.
+  Specifically, `ping` tells us that the mean latency was 117ms and packet loss 0%.
+  `iperf3` gives us mean bandwidth of close to 100Mbps in both directions.
 
   `iperf3` can measure bandwidth in a variety of ways, including using UDP, rather than TCP packets.
   Here is a [link](https://aws.amazon.com/premiumsupport/knowledge-center/network-throughput-benchmark-linux-ec2/) to a quick tutorial, but consider also checking out the `man iperf3` page.
