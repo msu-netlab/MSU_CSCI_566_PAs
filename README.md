@@ -121,7 +121,7 @@ To make the task manageable we will restrict your evaluation to the following ex
 
 ### What to submit
 
-Submit your measurements recorded in a copy of this spreadsheet.
+Submit your measurements recorded in a copy of [this spreadsheet](https://github.com/msu-netlab/MSU_CSCI_566_PAs/blob/direct_communications/results.xlsx).
 Additionally, submit a PDF describing:
   1. Your experimental setup
   2. Any encountered limitations of the direction communication technology you used.
