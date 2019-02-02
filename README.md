@@ -1,4 +1,4 @@
-# CSCI 566 Programming Assignment - Network Measurement
+# CSCI 566 Programming Assignment - Direct Communications
 
 ## Instructions
 
