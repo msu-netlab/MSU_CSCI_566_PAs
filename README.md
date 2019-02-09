@@ -89,15 +89,21 @@ The number of graphs you could generate based on these is number of factors time
 That is a lot of graphs!
 To make the task manageable we will restrict your evaluation to the following experiments:
 
+  0. Make sure that your network settings work.
+  Set bidirectional latency (there and back) to 30ms, bandwidth to 10Mbps, and loss to 1%.
+  These settings must be active simultaneously - no one or the other.
+  Measure your network latency, bandwidth, and loss and show that network performance conforms to the settings.
+  Doing these steps will ensure that the following experiments measure the impact of network performance, not just the settings.
+
   1. For the c-s factor measure the min, mean, and max connect time.
-  Set bidirectional latency (there and back) to 50ms - that will allow us to estimate the number of round trips and compare results across the different technologies evaluated by different groups.
+  Set bidirectional latency (there and back) to 30ms - that will allow us to estimate the number of round trips and compare results across the different technologies evaluated by different groups.
   Set bandwidth to 10Mbps and loss to 0%.
 
   2. Repeat the above experiment for the s-cc scenario by varying the number of nodes from 2 to 5 by 1.
 
   3. For the c-s, c-s-c factor measure min, mean, and max message delay.
   You will need to implement message forwarding functionality on your server.
-  Set latency to 50ms, bandwidth to 10Mbps, and loss to 0%.
+  Set latency to 30ms, bandwidth to 10Mbps, and loss to 0%.
   Vary message payload size from 1B to 1MB by a factor of 2, i.e, 1B, 2B, 4B, etc.
 
   4. Repeat the above experiment for the s-cc scenario by varying the number of nodes from 2 to 5 by 1.
@@ -113,11 +119,11 @@ To make the task manageable we will restrict your evaluation to the following ex
 
   9. For the c-s factor measure protocol overhead in bytes calculated as message size minus payload size.
   You may obtain message size using Wireshark.
-  Set latency to 50ms, bandwidth to 10Mbps, and loss to 0%.
+  Set latency to 30ms, bandwidth to 10Mbps, and loss to 0%.
   Vary message size from 1B to 1MB by a factor of 2, i.e, 1B, 2B, 4B, etc.
 
   10. For the c-s-c factor measure min, mean, and max message delay.
-  Set latency to 50ms, bandwidth to 10Mbps, loss to 0%, and message size to 32B.
+  Set latency to 30ms, bandwidth to 10Mbps, loss to 0%, and message size to 32B.
   Vary message transmission rate from 256 per second to 1 per second by a factor of 2.
 
 
