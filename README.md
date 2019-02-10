@@ -140,7 +140,7 @@ In this assignment I would like you to answer the following questions based on m
 
 3. What is the relationship between `tc` bandwidth setting and the measured bandwidth to your EC2 instance.
 
-4. How long does it take to open a TCP socket between a client and a server so that a client can start sending data under different conditions of latency?
+4. How long does it take to open a TCP socket between a client and a server so that a client can start sending data under different jointly varried conditions of latency?
 
 5. How long does it take to download a file from an EC2 instance under different conditions of latency and bandwidth.
 
