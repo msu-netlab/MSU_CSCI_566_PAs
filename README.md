@@ -1,4 +1,4 @@
-# CSCI 566 Programming Assignment - Direct Communications
+# CSCI 566 Programming Assignment - Message Queues
 
 ## Instructions
 
@@ -27,7 +27,7 @@ The set of technologies we will consider in this assignment is:
   - QUIC (soon to be HTTP/3)
   - MPI
 
-Your task is to set up a basic network communication application using one of the technologies and measure its performance within the framework parameters, factors, and metrics and define your experiment. 
+Your task is to set up a basic network communication application using one of the technologies and measure its performance within the framework parameters, factors, and metrics and define your experiment.
 You may also consider basing your implementation on other direct communication technologies, such as the [ISteamNetworkingSockets Interface](https://partner.steamgames.com/doc/api/ISteamNetworkingSockets), but please discuss these with me first.
 
 
