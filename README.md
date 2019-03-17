@@ -3,30 +3,29 @@
 ## Instructions
 
 Complete the following assignment in your project group.
-Submit your work on D2L into the “Programming Assignment 3” group submission folder.
+Submit your work on D2L into the “Programming Assignment 4” group submission folder.
 
 
 ## Learning Objectives
 
 In this programming assignment you will:
 
- - Implement a network communication application using message queues
- - Benchmark the performance of one of message queue technologies discussed in class
+ - Implement a network communication application using a publish/subscribe system
+ - Benchmark the performance of one of the pub/sub technologies discussed in class
 
 
 ## Overview
 
 In this project you will continue the process of measuring the performance of the different communication technologies currently available for implementation of augmented reality&nbsp;(AR) services.
 The set of technologies we will consider in this assignment is:
-  - Amazon SQS
-  - RabbitMQ
-  - ZeroMQ
-  - Firebase Cloud Messaging
-  - Google Cloud Messaging (the old version)
 
+  - Apache Kafka
+  - Apache Pulsar
+  - Google Cloud Pub/Sub
+  - Akka
 
 Your task is to set up a basic network communication application using one of the technologies and measure its performance within the framework parameters, factors, and metrics and define your experiment.
-Additionally there are a number of message queue technologies our there.
+Additionally there are a number of pub/sub technologies our there.
 If you are interested in using a technology not on the list above, please talk with me first.
 
 
@@ -58,7 +57,7 @@ For each transmission you do not need to at this point implement a real "Grenade
 
 Implement the application using one of the available messaging technologies.
 You may use any language and any set of packages you like.
-If you are using hosted services, for example [CloudAMQP](https://www.cloudamqp.com/) you need to make sure that you can achieve the performance required in experiment 0 below.
+If you are using hosted services you need to make sure that you can achieve the performance required in experiment 0 below.
 
 You may place your application nodes on different AWS instances and control delay between them using tc/netem.
 Alternatively, you may deploy your application nodes inside [Mininet](http://mininet.org/), which you learned to use in CSCI&nbsp;466.
@@ -128,7 +127,7 @@ To make the task manageable we will restrict your evaluation to the following ex
 
 ### What to submit
 
-Submit your measurements recorded in a copy of [this spreadsheet](https://github.com/msu-netlab/MSU_CSCI_566_PAs/blob/message_queues/results.xlsx).
+Submit your measurements recorded in a copy of [this spreadsheet](https://github.com/msu-netlab/MSU_CSCI_566_PAs/blob/pub_subs/results.xlsx).
 Additionally, submit a PDF describing:
   1. Your experimental setup
   2. Any encountered limitations of the message queues technology you used.
