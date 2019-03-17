@@ -1,4 +1,4 @@
-# CSCI 566 Programming Assignment - Message Queues
+# CSCI 566 Programming Assignment - Publish/Subscribe Systems
 
 ## Instructions
 
