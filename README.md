@@ -1,17 +1,17 @@
-# CSCI 566 Programming Assignment - Publish/Subscribe Systems
+# CSCI 566 Programming Assignment - Real-Time Databases
 
 ## Instructions
 
 Complete the following assignment in your project group.
-Submit your work on D2L into the “Programming Assignment 4” group submission folder.
+Submit your work on D2L into the “Programming Assignment 5” group submission folder.
 
 
 ## Learning Objectives
 
 In this programming assignment you will:
 
- - Implement a network communication application using a publish/subscribe system
- - Benchmark the performance of one of the pub/sub technologies discussed in class
+ - Implement a network communication application using a real-time database
+ - Benchmark the performance of one of the real-time database technologies discussed in class
 
 
 ## Overview
@@ -19,13 +19,13 @@ In this programming assignment you will:
 In this project you will continue the process of measuring the performance of the different communication technologies currently available for implementation of augmented reality&nbsp;(AR) services.
 The set of technologies we will consider in this assignment is:
 
-  - Apache Kafka
-  - Apache Pulsar
-  - Google Cloud Pub/Sub
-  - Akka
+  - Firebase
+  - Realm
+  - RethinkDB
+  - MongoDB
 
 Your task is to set up a basic network communication application using one of the technologies and measure its performance within the framework parameters, factors, and metrics and define your experiment.
-Additionally there are a number of pub/sub technologies our there.
+Additionally there are a number of real-time databases our there.
 If you are interested in using a technology not on the list above, please talk with me first.
 
 
@@ -127,7 +127,7 @@ To make the task manageable we will restrict your evaluation to the following ex
 
 ### What to submit
 
-Submit your measurements recorded in a copy of [this spreadsheet](https://github.com/msu-netlab/MSU_CSCI_566_PAs/blob/pub_sub/results.xlsx).
+Submit your measurements recorded in a copy of [this spreadsheet](https://github.com/msu-netlab/MSU_CSCI_566_PAs/blob/real-time_databases/results.xlsx).
 Additionally, submit a PDF describing:
   1. Your experimental setup
   2. Any encountered limitations of the message queues technology you used.
