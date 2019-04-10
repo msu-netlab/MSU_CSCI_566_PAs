@@ -1,4 +1,4 @@
-# CSCI 566 Programming Assignment - Real-Time Databases
+# CSCI 566 Programming Assignment - Final Project
 
 ## Instructions
 
